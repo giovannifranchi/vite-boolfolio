@@ -6,7 +6,35 @@ import axios from "axios";
 
 export default {
   name: "App",
+
   components: { AppHeader, AppMain, AppFooter },
+
+  data(){
+    return {
+      config: {
+        baseURL: 'http://127.0.0.1:8007/api',
+        projects: '/projects'
+      },
+      projects: [],
+    }
+  },
+
+  methods: {
+    getProjects(){
+      axios.get(this.config.baseURL + this.config.projects)
+      .then((response)=>{
+        console.log(response);
+      })
+      .catch((error)=>{
+        console.log(error);
+      })
+    }
+  },
+
+  created(){
+    this.getProjects();
+  }
+
 };
 </script>
 
