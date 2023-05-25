@@ -8,7 +8,13 @@
 
 <script>
     export default {
-        name:'AppMain'
+        name:'AppMain',
+        props: {
+            info: {
+                type: Array,
+                required: true,
+            }
+        }
     }
 </script>
 

@@ -23,7 +23,7 @@ export default {
     getProjects(){
       axios.get(this.config.baseURL + this.config.projects)
       .then((response)=>{
-        console.log(response);
+        this.projects = response.data;
       })
       .catch((error)=>{
         console.log(error);
@@ -41,7 +41,7 @@ export default {
 <template>
   <div class="d-flex flex-column wrapper">
     <AppHeader />
-    <AppMain />
+    <AppMain :info="projects"/>
     <AppFooter />
   </div>
 </template>
