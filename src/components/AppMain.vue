@@ -1,9 +1,9 @@
 <template>
-    <div class="container">
-        <main>
+    <main class="flex-grow-1">
+        <div class="container">
         Main
-        </main>
-    </div>
+        </div>
+    </main>
 </template>
 
 <script>
