@@ -1,9 +1,9 @@
 <template>
-<div class="container">
-    <footer class="py-3 bg-black">
-        Footer
+    <footer class="py-3 bg-black text-white">
+        <div class="container">
+            Footer
+        </div>
     </footer>
-</div>
 </template>
 
 <script>

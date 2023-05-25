@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <header class="d-flex justify-content-between py-3 align-items-center">
+<header class="bg-black text-white">
+    <div class="container d-flex justify-content-between py-3 align-items-center">
       <div class="logo">logo</div>
       <div>menu</div>
-    </header>
   </div>
+</header>
 </template>
 
 <script>
