@@ -1,6 +1,6 @@
 <template>
   <div class="card h-100">
-    <img src="..." class="card-img-top" alt="..." v-if="detail.image" />
+    <img :src="detail.image" class="card-img-top" alt="..." v-if="detail.image" />
     <div class="card-body">
       <h5 class="card-title">{{ detail.title }}</h5>
       <p class="card-text">
