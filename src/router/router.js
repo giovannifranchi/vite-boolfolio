@@ -3,6 +3,7 @@ import HomePage from '../views/HomePage.vue';
 import AboutPage from '../views/AboutPage.vue';
 import ProjectsPage from '../views/ProjectsPage.vue';
 import ProjectDetail from '../components/ProjectPage/ProjectDetails.vue';
+import PageNotFound from '../views/PageNotFound.vue';
 
 
 const router = createRouter({
@@ -28,6 +29,11 @@ const router = createRouter({
             name: 'detail',
             component: ProjectDetail
         }, 
+        {
+            path: '/404',
+            name: 'notFound',
+            component: PageNotFound
+        }
     ]
 });
 

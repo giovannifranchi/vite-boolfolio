@@ -13,6 +13,8 @@
 <script>
 import axios from 'axios';
 
+
+
 export default {
   name: "ProjectDetail",
 
@@ -32,8 +34,8 @@ export default {
         .then((result)=>{
             this.project = result.data;
         })
-        .catch((error)=>{
-            console.log(error);
+        .catch(()=>{
+            this.$router.push({name: 'notFound'});
         })
     }
   },
