@@ -6,7 +6,7 @@
       <p class="card-text">
         {{ detail.summary.substring(0, 250) }}
       </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <router-link :to="{name: 'detail', params: {slug: detail.slug}}" class="btn btn-primary">Details</router-link>
     </div>
   </div>
 </template>

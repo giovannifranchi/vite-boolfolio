@@ -2,7 +2,7 @@
 <header class="bg-black text-white">
     <div class="container d-flex justify-content-between py-3 align-items-center">
       <div class="logo">logo</div>
-      <ul class="list-unstyled d-flex gap-2">
+      <ul class="list-unstyled d-flex gap-2 m-0 p-0">
         <li>
           <router-link :to="{name: 'home'}" class="nav-link">Home</router-link>
         </li>
