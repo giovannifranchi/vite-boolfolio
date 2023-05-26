@@ -14,7 +14,9 @@ export default {
 <template>
   <div class="d-flex flex-column wrapper">
     <AppHeader />
-    <RouterView class="flex-grow-1"/>
+    <main class="flex-grow-1 overflow-auto py-5">
+      <RouterView/>
+    </main>
     <AppFooter />
   </div>
 </template>
