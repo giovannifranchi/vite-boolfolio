@@ -12,6 +12,7 @@
 
 <script>
 import axios from 'axios';
+import store from '../../store';
 
 
 
@@ -21,16 +22,12 @@ export default {
   data() {
     return {
       project: null,
-      config: {
-        baseURL: "http://127.0.0.1:8000/api",
-        projects: "/projects",
-      },
     };
   },
 
   methods: {
     getProject(){
-        axios.get(this.config.baseURL + this.config.projects + '/' + this.$route.params.id)
+        axios.get(store.baseUrl + store.endpoints.projects + '/' + this.$route.params.id)
         .then((result)=>{
             this.project = result.data;
         })
