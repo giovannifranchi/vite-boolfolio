@@ -30,7 +30,7 @@ export default {
 
   methods: {
     getProject(){
-        axios.get(this.config.baseURL + this.config.projects + '/' + this.$route.params.slug)
+        axios.get(this.config.baseURL + this.config.projects + '/' + this.$route.params.id)
         .then((result)=>{
             this.project = result.data;
         })
