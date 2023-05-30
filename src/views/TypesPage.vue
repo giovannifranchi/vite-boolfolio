@@ -5,12 +5,12 @@
     <p>{{ type.description ? type.description : "Description not available" }}</p>
     <hr />
     <h3>Related Projects</h3>
-    <ul v-if="type.projects" class="d-flex gap-3 list-unstyled">
+    <ul v-if="type.projects.length > 0" class="d-flex gap-3 list-unstyled">
       <li v-for="(project, index) in type.projects" :key="index">
-        {{ project.title }}
+        <router-link :to="{ name: 'detail', params:{id: project.id, slug: project.slug} }" class="nav-link">{{ project.title }}</router-link>
       </li>
     </ul>
-    <h5 v-else>No projects currently related to this type</h5>
+    <h5 v-else>No project currently related to this type</h5>
   </div>
 </template>
 
