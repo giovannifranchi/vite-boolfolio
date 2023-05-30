@@ -7,6 +7,16 @@
 
     <p>{{ project.summary }}</p>
 
+    <h4>Type: {{ project.type ? project.type.name : 'Uknown' }} </h4>
+
+    <hr>
+
+    <ul v-if="project.technologies.length > 0" class="d-flex gap-3 list-unstyled">
+      <li v-for="(technology, index) in project.technologies" :key="index">
+        <span class="badge text-bg-warning fs-5">{{ technology.name.toUpperCase() }}</span>
+      </li>
+    </ul>
+
   </div>
 </template>
 
