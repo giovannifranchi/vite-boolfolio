@@ -17,6 +17,19 @@
       </li>
     </ul>
 
+    <hr>
+
+    
+    <h2 class="mb-3">Comments:</h2>
+    <ul class="list-unstyled" v-if="project.comments.length > 0">
+      <li v-for="(comment, index) in project.comments">
+        <h3>Author: {{ comment.author }}</h3>
+        <span>{{ handleDate(comment.created_at) }}</span>
+        <p>{{ comment.content }}</p>
+      </li>
+    </ul>
+    <h5 v-else>no comments</h5>
+
   </div>
 </template>
 
@@ -32,6 +45,7 @@ export default {
   data() {
     return {
       project: null,
+      
     };
   },
 
@@ -46,7 +60,15 @@ export default {
               this.$router.push({name: 'not-found'});
             }
         })
+    },
+
+    handleDate(_date){
+
+      const commentDate = new Date(_date)
+
+      return commentDate.toLocaleString();
     }
+
   },
 
   created(){
