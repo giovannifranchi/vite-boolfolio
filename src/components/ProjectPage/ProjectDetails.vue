@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="project">
 
     <img :src="project.image" :alt="project.title" v-if="project.image">
 
@@ -34,8 +34,10 @@ export default {
         .then((result)=>{
             this.project = result.data;
         })
-        .catch(()=>{
-            this.$router.push({name: 'notFound'});
+        .catch((error)=>{
+            if(error.response.status === 404){
+              this.$router.push({name: 'not-found'});
+            }
         })
     }
   },
