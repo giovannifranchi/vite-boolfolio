@@ -12,6 +12,7 @@
 
 <script>
 import axios from "axios";
+import store from "../store";
 import CardComponent from "../components/utils/CardComponent.vue";
 
 export default {
@@ -21,10 +22,7 @@ export default {
 
   data() {
     return {
-      config: {
-        baseURL: "http://127.0.0.1:8000/api",
-        projects: "/projects",
-      },
+      store,
       projects: [],
     };
   },
@@ -32,7 +30,7 @@ export default {
   methods: {
     getProjects() {
       axios
-        .get(this.config.baseURL + this.config.projects)
+        .get(store.baseUrl + store.endpoints.projects)
         .then((response) => {
           this.projects = response.data;
         })
